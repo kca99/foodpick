@@ -17,11 +17,11 @@ function openDiv(){
 class App extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container ">
         <div className="row">
           Hello World!
         </div>
-        <div className="row justify-content-center">
+        <div className="row justify-content-center align-items-center">
           <div className="col-4">
             <p onClick={openDiv}> open</p>
           </div>
