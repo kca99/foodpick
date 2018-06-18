@@ -6,29 +6,24 @@ function openDiv(event, div) {
   var hiddenDiv = document.getElementById(div);
   console.log(div);
   console.log(document.getElementById("hidden2").style.display);
-  if(div !== "hidden1" && document.getElementById("hidden1").style.display ==="flex"){
+  if (div !== "hidden1" && document.getElementById("hidden1").style.display === "flex") {
     console.log("1");
-    document.getElementById("hidden1").style.display="none";
+    document.getElementById("hidden1").style.display = "none";
     hiddenDiv.style.display = "flex";
   }
-  else if(div !== "hidden2" && document.getElementById("hidden2").style.display ==="flex"){
+  else if (div !== "hidden2" && document.getElementById("hidden2").style.display === "flex") {
     console.log("2");
-    document.getElementById("hidden2").style.display="none";
+    document.getElementById("hidden2").style.display = "none";
     hiddenDiv.style.display = "flex";
   }
-
   else if (hiddenDiv.style.display === "flex") {
     console.log("3");
     hiddenDiv.style.display = "none";
   }
   else {
     console.log("4");
-
     hiddenDiv.style.display = "flex";
   }
-
-  
-
 }
 
 class App extends Component {
@@ -43,7 +38,7 @@ class App extends Component {
             <p onClick={(e) => openDiv(e, "hidden2")}> Banana </p>
           </div>
           <div className="col-4">
-          <p> Cherry </p>
+            <p> Cherry </p>
           </div>
         </div>
         <div className="row" id="hidden1">
@@ -64,7 +59,7 @@ class App extends Component {
           </div>
         </div>
         <div className="row" id="hidden2">
-          
+
           <div className="col-4">
             six
           </div>
@@ -78,7 +73,11 @@ class App extends Component {
             nine
           </div>
         </div>
-        
+        <div className="form-row text-center">
+          <div className= "col-12">
+            <button type="submit" className="btn btn-primary">Submit</button>
+          </div>
+        </div>
       </div>
     );
   }
