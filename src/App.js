@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function openDiv(){
-  console.log('success');
-  var hiddenDiv = document.getElementById("hidden");
+function openDiv(event, div){
+  var hiddenDiv = document.getElementById(div);
   console.log(hiddenDiv.style.display);
   if(hiddenDiv.style.display === "flex"){
     hiddenDiv.style.display = "none";
@@ -18,12 +17,9 @@ class App extends Component {
   render() {
     return (
       <div className="container ">
-        <div className="row">
-          Hello World!
-        </div>
         <div className="row justify-content-center align-items-center">
           <div className="col-4">
-            <p onClick={openDiv}> open</p>
+            <p onClick={(e) => openDiv(e, "hidden")}> open</p>
           </div>
           <div className="col-4">
           Banana
