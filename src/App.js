@@ -55,21 +55,40 @@ function openDiv(event, div) {
 function addArray(event, obj) { //TODO: maybe clean this up 
   //console.log(obj);
   var found = 0;
-  for (var i = 0; i < n; i++){ //linear traversal TODO: binary search if you want
-    if(array[i] === obj){ // duplicate
-      array.splice(i,1);
+  for (var i = 0; i < n; i++) { //linear traversal TODO: binary search if you want
+    if (array[i] === obj) { // duplicate
+      array.splice(i, 1);
       n--;
       found = 1;
     }
   }
-  if (found === 0){
+  if (found === 0) {
     array[n] = obj;
     n++;
   }
   console.log(array);
 }
 
+
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      text: "Press Submit."
+    }
+  }
+
+  onClick(a) {
+    console.log(a);
+    var index = Math.floor((Math.random() * n ) );
+    console.log(index);
+    var chosenCuisine = a[index];
+    console.log(chosenCuisine);
+    this.setState({
+      text: chosenCuisine
+    })
+  }
+
   render() {
     return (
       <div className="container">
@@ -83,9 +102,6 @@ class App extends Component {
           <div className="col-4">
             <p onClick={(e) => openDiv(e, "hidden3")} > South East Asian </p>
           </div>
-
-
-
         </div>
 
         <div className="row" id="hidden1">
@@ -147,8 +163,11 @@ class App extends Component {
 
         <div className="form-row text-center">
           <div className="col-12">
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary" onClick={() => this.onClick(array)} >
               Submit</button>
+          </div>
+          <div id="returnValue">
+            {this.state.text}
           </div>
         </div>
       </div>
