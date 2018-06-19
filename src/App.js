@@ -30,33 +30,42 @@ function openDiv(event, div) {
     hiddenDiv.style.display = "flex";
   } */
 
-  if (current === "none"){ //base case: first click
-    console.log("1");
-
+  if (current === "none") { //base case: first click
+    //console.log("1");
     var hiddenDiv = document.getElementById(div);
     hiddenDiv.style.display = "flex";
     current = div;
   }
-  else if(current !== div){ //case: user clicked something different
-    console.log("2");
+  else if (current !== div) { //case: user clicked something different
+    //console.log("2");
     var prevDiv = document.getElementById(current);
     prevDiv.style.display = "none";
-    var hiddenDiv = document.getElementById(div);
+    hiddenDiv = document.getElementById(div);
     hiddenDiv.style.display = "flex";
     current = div;
   }
-  else if (current === div && document.getElementById(div).style.display === "flex"){ //case: user clicked same item while it was up
+  else if (current === div && document.getElementById(div).style.display === "flex") { //case: user clicked same item while it was up
     document.getElementById(div).style.display = "none";
-  } 
-  else{ //case: user clicked same option while it was down
+  }
+  else { //case: user clicked same option while it was down
     document.getElementById(div).style.display = "flex";
   }
 }
 
-function addArray(event, obj) {
+function addArray(event, obj) { //TODO: maybe clean this up 
   //console.log(obj);
-  array[n] = obj;
-  n++;
+  var found = 0;
+  for (var i = 0; i < n; i++){ //linear traversal TODO: binary search if you want
+    if(array[i] === obj){ // duplicate
+      array.splice(i,1);
+      n--;
+      found = 1;
+    }
+  }
+  if (found === 0){
+    array[n] = obj;
+    n++;
+  }
   console.log(array);
 }
 
@@ -74,6 +83,9 @@ class App extends Component {
           <div className="col-4">
             <p onClick={(e) => openDiv(e, "hidden3")} > South East Asian </p>
           </div>
+
+
+
         </div>
 
         <div className="row" id="hidden1">
@@ -115,6 +127,21 @@ class App extends Component {
           </div>
           <div className="col-4">
             <p onClick={(e) => addArray(e, "Thai")}> Thai </p>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-4">
+            <p onClick={(e) => addArray(e, "Fast Food")} > Fast Food </p>
+          </div>
+          <div className="col-4">
+            <p onClick={(e) => addArray(e, "Mexican")} > Mexican </p>
+          </div>
+          <div className="col-4">
+            <p onClick={(e) => addArray(e, "Indian")} > Indian </p>
+          </div>
+          <div className="col-4">
+            <p onClick={(e) => addArray(e, "Middle Eastern")} > Middle Eastern </p>
           </div>
         </div>
 
