@@ -17,7 +17,7 @@ html{
   height:100%;
 }
 
-#hidden1,#hidden2{
+#hidden1,#hidden2, #hidden3{
   display: none;
 }
 
