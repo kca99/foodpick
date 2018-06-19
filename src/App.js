@@ -65,6 +65,8 @@ function addArray(event, obj) { //TODO: maybe clean this up
   if (found === 0) {
     array[n] = obj;
     n++;
+    console.log(document.getElementById(obj).style.color);
+    document.getElementById(obj).style.color = "red";
   }
   console.log(array);
 }
@@ -106,58 +108,58 @@ class App extends Component {
 
         <div className="row" id="hidden1">
           <div className="col-4" >
-            <p onClick={(e) => addArray(e, "Taiwanese")}> Taiwanese </p>
+            <p id="Taiwanese" onClick={(e) => addArray(e, "Taiwanese")}> Taiwanese </p>
           </div>
           <div className="col-4">
-            <p onClick={(e) => addArray(e, "Chinese")}> Chinese </p>
+            <p id="Chinese" onClick={(e) => addArray(e, "Chinese")}> Chinese </p>
           </div>
           <div className="col-4">
-            <p onClick={(e) => addArray(e, "Korean")}> Korean </p>
+            <p id="Korean" onClick={(e) => addArray(e, "Korean")}> Korean </p>
           </div>
           <div className="col-4">
-            <p onClick={(e) => addArray(e, "Japanese")}> Japanese </p>
+            <p id="Japanese" onClick={(e) => addArray(e, "Japanese")}> Japanese </p>
           </div>
         </div>
 
         <div className="row" id="hidden2">
           <div className="col-4">
-            <p onClick={(e) => addArray(e, "British")}> British </p>
+            <p id="British" onClick={(e) => addArray(e, "British")}> British </p>
           </div>
           <div className="col-4">
-            <p onClick={(e) => addArray(e, "French")}> French </p>
+            <p id="French" onClick={(e) => addArray(e, "French")}> French </p>
           </div>
           <div className="col-4">
-            <p onClick={(e) => addArray(e, "German")}> German </p>
+            <p id="German" onClick={(e) => addArray(e, "German")}> German </p>
           </div>
           <div className="col-4">
-            <p onClick={(e) => addArray(e, "Mediterranean")}> Mediterranean </p>
+            <p id="Mediterranean" onClick={(e) => addArray(e, "Mediterranean")}> Mediterranean </p>
           </div>
         </div>
 
         <div className="row" id="hidden3">
           <div className="col-4">
-            <p onClick={(e) => addArray(e, "Vietnamese")}> Vietnamese </p>
+            <p id="Vietnamese" onClick={(e) => addArray(e, "Vietnamese")}> Vietnamese </p>
           </div>
           <div className="col-4">
-            <p onClick={(e) => addArray(e, "Filipino")}> Filipino </p>
+            <p id="Filipino" onClick={(e) => addArray(e, "Filipino")}> Filipino </p>
           </div>
           <div className="col-4">
-            <p onClick={(e) => addArray(e, "Thai")}> Thai </p>
+            <p id="Thai" onClick={(e) => addArray(e, "Thai")}> Thai </p>
           </div>
         </div>
 
         <div className="row">
           <div className="col-4">
-            <p onClick={(e) => addArray(e, "Fast Food")} > Fast Food </p>
+            <p id="Fast Food" onClick={(e) => addArray(e, "Fast Food")} > Fast Food </p>
           </div>
           <div className="col-4">
-            <p onClick={(e) => addArray(e, "Mexican")} > Mexican </p>
+            <p id="Mexican" onClick={(e) => addArray(e, "Mexican")} > Mexican </p>
           </div>
           <div className="col-4">
-            <p onClick={(e) => addArray(e, "Indian")} > Indian </p>
+            <p id="Indian" onClick={(e) => addArray(e, "Indian")} > Indian </p>
           </div>
           <div className="col-4">
-            <p onClick={(e) => addArray(e, "Middle Eastern")} > Middle Eastern </p>
+            <p id="Middle Eastern" onClick={(e) => addArray(e, "Middle Eastern")} > Middle Eastern </p>
           </div>
         </div>
 
