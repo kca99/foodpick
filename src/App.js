@@ -60,6 +60,8 @@ function addArray(event, obj) { //TODO: maybe clean this up
       array.splice(i, 1);
       n--;
       found = 1;
+      document.getElementById(obj).style.color = "black";
+
     }
   }
   if (found === 0) {
@@ -80,7 +82,7 @@ class App extends Component {
     }
   }
 
-  onClick(a) {
+  onClick(a) { //TODO: EMPTY ARRAY GIVE ERROR
     console.log(a);
     var index = Math.floor((Math.random() * n ) );
     console.log(index);
